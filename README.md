@@ -19,3 +19,10 @@ Optionally, create an environment variable file and pass that instead:
 ```shell
 docker run -it --rm --env-file env.list theraapster/cloudflare-ddns
 ```
+
+## Build docker container
+```shell
+docker build -t theraapster/cloudflare-ddns:latest -t theraapster/cloudflare-ddns:2.0 .
+docker push theraapster/cloudflare-ddns:latest
+docker push theraapster/cloudflare-ddns:2.0
+```
