@@ -1,8 +1,9 @@
-# docker run -it --rm --env-file env.list theraapster/cloudflare-ddns
-FROM bash:4.4
+FROM mcr.microsoft.com/powershell
 
-COPY dns.sh /
+COPY dns.ps1 /
 
-RUN apk add --no-cache jq curl bind-tools
+RUN apt-get update && apt-get install -y \
+	dnsutils \
+	--no-install-recommends
 
-CMD ["bash", "/dns.sh"]
+CMD ["pwsh", "/dns.ps1"]
