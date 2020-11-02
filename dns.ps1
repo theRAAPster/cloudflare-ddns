@@ -10,6 +10,7 @@ $ExternalIp = Invoke-Expression $Dig
 
 $Headers = @{
     'Authorization' = "Bearer $CLOUDFLARE_TOKEN"
+    'Content-Type'  = "application/json"
 }
 
 $URI_Zone = "$CLOUDFLARE_API_ENDPOINT/zones?name=$CLOUDFLARE_DOMAIN"
